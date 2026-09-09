@@ -1,96 +1,121 @@
 <a href="https://github.com/zechub/zechub/edit/main/site/Zcash_Tech/Lightwallet_Nodes.md" target="_blank">
-  <img src="https://img.shields.io/badge/Edit-blue" alt="Sayfayı Düzenle"/>
+  <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
 
 # Zcash Lightwallet Düğümleri
 
-## Giriş
+## Kısaca
 
-Çoğu insan Zcash’i, tüm blokzinciri indirmeyen bir light wallet aracılığıyla kullanır. Bunun yerine, bu işi zaten yapmış olan bir sunucuyla iletişim kurar. Bu sayfa, bu sunucuların ne olduğunu, sizin hakkınızda neleri görüp neleri göremeyeceklerini, bağlantınızı Tor üzerinden nasıl yönlendirebileceğinizi ve cüzdanınızın kullandığı sunucuyu nasıl değiştirebileceğinizi açıklar.
+* Çoğu kişi Zcash'i, blokzincirin tamamını indirmeyen bir hafif cüzdan aracılığıyla kullanır. Bunun yerine, bu işi zaten yapmış bir sunucuyla iletişim kurar.
+* Günümüzde hafif cüzdanlara iki yazılım hizmet verir: Go ile yazılmış özgün hizmet **lightwalletd** ve Rust ile yazılmış daha yeni bir indeksleyici olan **Zaino**.
+* Anahtarlarınız cihazınızdan asla ayrılmaz; sunucu fonlarınızı harcayamaz veya tamamen korumalı işlemlerin içindeki tutarları ve notları okuyamaz.
+* Sunucunun öğrenmek için elverişli olduğu şey IP adresiniz ve etkinliğinizin zamanlamasıdır — korumalı işlemler blokzincirde olup biteni korur, sunucuyla bağlantınızı değil.
+* Tor, IP tanımlayıcısını ortadan kaldırır; `zcash_client_backend` üzerine inşa edilen cüzdanlarda kullanılabilir ve ZODL'de Gelişmiş Ayarlar içinde bir ayardır.
+* Cüzdanınızın kullandığı sunucuyu değiştirebilir veya kendiniz çalıştırabilirsiniz — hem lightwalletd hem de Zaino açık kaynaklıdır.
 
-Bugün light wallet’lara iki yazılım hizmet verir. **lightwalletd**, Go ile yazılmış özgün hizmettir. **Zaino** ise Rust ile yazılmış, zcashd kullanım dışı bırakma çalışmasının bir parçası olarak geliştirilmiş daha yeni bir indeksleyicidir.
+## Temel Açıklama
 
-## Bir light wallet sunucusu ne yapar
+Çoğu kişi Zcash'i, blokzincirin tamamını indirmeyen bir hafif cüzdan aracılığıyla kullanır. Bunun yerine, bu işi zaten yapmış bir sunucuyla iletişim kurar. Bu sayfa, bu sunucuların ne olduğunu, sizin hakkınızda neleri görüp göremeyeceklerini, bağlantınızı Tor üzerinden nasıl yönlendireceğinizi ve cüzdanınızın kullandığı sunucuyu nasıl değiştireceğinizi açıklar.
 
-Bir light wallet sunucusu, cüzdanınız ile Zcash blokzinciri arasında yer alır ve zincirin bant genişliği açısından verimli bir görünümünü sağlar. Sizin için üç şey yapar.
+Günümüzde hafif cüzdanlara iki yazılım hizmet verir. **lightwalletd**, Go ile yazılmış özgün hizmettir. **Zaino**, zcashd kullanım dışı bırakma çalışmasının bir parçası olarak geliştirilen, Rust ile yazılmış daha yeni bir indeksleyicidir.
 
-Compact block’ları sunar. Tüm bloklar yerine, bir cüzdanın shielded adresine gelen bir ödemeyi tespit etmesi, note’larının harcanmasını algılaması ve witness’larını güncellemesi için gerekenleri taşıyan compact bir biçim gönderir.
+### Hafif cüzdan sunucusu ne yapar?
 
-İşlemlerinizi iletir. Gönderim yaptığınızda, cüzdanınız tamamlanmış işlemi sunucuya verir ve sunucu bunu ağa yayınlar.
+Bir hafif cüzdan sunucusu, cüzdanınız ile Zcash blokzinciri arasında yer alır ve cüzdanınıza zincirin bant genişliği açısından verimli bir görünümünü sunar. Sizin için üç şey yapar.
 
-Mevcut yükseklik ve cüzdanınızın ihtiyaç duyduğu ücret bilgileri gibi zincir sorgularını yanıtlar.
+Sıkıştırılmış blokları sunar. Tam bloklar yerine, bir cüzdanın korumalı adresine gelen ödemeyi algılaması, notlarının harcanmasını algılaması ve tanıklarını güncellemesi için gerekenleri taşıyan sıkıştırılmış bir biçim gönderir.
 
-Cüzdanınız yine de özel işleri yerel olarak yapar. Anahtarlarınızı tutar, note’larınızı bulmak için blokları deneme amaçlı çözer ve işlemleri cihazınızda oluşturup imzalar.
+İşlemlerinizi iletir. Gönderim yaptığınızda cüzdanınız tamamlanmış işlemi sunucuya verir; sunucu da bunu ağa yayınlar.
 
-## Sunucu neleri görebilir ve neleri göremez
+Mevcut yükseklik ve cüzdanınızın ihtiyaç duyduğu ücret bilgisi gibi zincir sorgularını yanıtlar.
 
-Burası yanlış anlaşılması kolay olan kısımdır. Anahtarlarınız cihazınızı asla terk etmez, ancak bu, sunucunun sizin hakkınızda hiçbir şey öğrenmediği anlamına gelmez.
+Cüzdanınız gizli işleri yine yerelde yapar. Anahtarlarınızı tutar, notlarınızı bulmak için blokları deneme amaçlı şifre çözer ve cihazınızda işlemler oluşturup imzalar.
 
-Buradaki referans, [Zcash wallet app threat model](https://zcash.readthedocs.io/en/latest/rtd_pages/wallet_threat_model.html)’dir; bunu önemsiyorsanız tamamını okumaya değer. Birkaç tür saldırganı ortaya koyar. Bu sayfa için önemli olan, cüzdanınız ile internet arasındaki ve sunucu ile internet arasındaki trafiği izleyebilen bir saldırgandır. Sunucuyu çalıştıran kişi doğası gereği kısmen bu konumdadır, çünkü cüzdanınız onlara doğrudan bağlanır.
+### Sunucu neleri görebilir ve göremez?
 
-Önce neyin korunduğuyla başlayalım. Modeldeki her saldırgana karşı, buna sunucuyu ele geçirmiş biri de dahil olmak üzere, "can't learn any of the user's cryptographic key material (spending keys, viewing keys, seed phrase, etc.)", fonlarınızı çalamaz ve sizin göndermek istemediğiniz fonları göndermenizi sağlayamaz. Tam shielded işlemlerin içindeki tutarlar ve memolar şifreli kalır.
+Yanlış anlaması kolay olan kısım burasıdır. Anahtarlarınız cihazınızdan asla ayrılmaz, ancak bu sunucunun sizin hakkınızda hiçbir şey öğrenmediği anlamına gelmez.
 
-Sonra korunmayanlar var. Tehdit modeli bunları, trafiği gözlemleyen bir saldırgana karşı bilinen zayıflıklar olarak listeler:
+Buradaki referans, bu konu sizin için önemliyse tamamını okumanıza değer olan [Zcash cüzdan uygulaması tehdit modeli](https://zcash.readthedocs.io/en/latest/rtd_pages/wallet_threat_model.html)'dir. Model, çeşitli saldırgan türlerini ortaya koyar. Bu sayfa açısından önemli olan, cüzdanınız ile internet arasındaki ve sunucu ile internet arasındaki trafiği izleyebilen bir saldırgandır. Sunucuyu işleten kişi, cüzdanınız doğrudan ona bağlandığı için doğası gereği kısmen bu konumdadır.
+
+Korunanlarla başlayalım. Modeldeki her saldırgana karşı, sunucuyu ele geçirmiş olan biri de dahil olmak üzere, "kullanıcının hiçbir kriptografik anahtar materyalini (harcama anahtarları, görüntüleme anahtarları, seed phrase vb.) öğrenemez", fonlarınızı çalamaz ve istemediğiniz fonları göndermenize neden olamaz. Tamamen korumalı işlemlerdeki tutarlar ve notlar şifreli kalır.
+
+Ardından korunmayanlar gelir. Tehdit modeli bunları, trafiği gözlemleyen bir saldırgana karşı bilinen zayıflıklar olarak listeler:
 
 | Zayıflık | Nasıl |
 |:--|:--|
-| Kim olduğunuzu belirleme | "The adversary knows the user's IP address, which could lead them to the user's real identity" |
-| Kabaca nerede olduğunuzu belirleme | IP’nize "in a geolocation database to approximate their location" şeklinde bakarak |
-| Shielded bir işlem gönderdiğinizi veya aldığınızı ve bunun ne zaman olduğunu belirleme | Gönderim "uses more bandwidth, which is visible even though the connection is encrypted". Model, gönderme ve alma eyleminin sunucunun kendisi tarafından da görülebildiğini belirtir |
-| Zaman içinde kaç işlem yaptığınızı sayma | Aynı bant genişliği örüntüleri, daha uzun bir dönem boyunca gözlemlendiğinde |
-| Tekrarlayan ödeme örüntülerini fark etme | Etkinliğin ne zaman gerçekleştiğini gözlemleyerek |
-| Bir adresin size ait olup olmadığını anlama | Zaten bir adresi bilen bir saldırgan, "could send funds to that address and watch to see if there are bandwidth spikes" cüzdanınızın onu alırken oluşturduğu trafiği izleyebilir |
+| Kim olduğunuzu belirleme | "Saldırgan, kullanıcının IP adresini bilir; bu da kullanıcının gerçek kimliğine ulaşmalarına yol açabilir" |
+| Yaklaşık olarak nerede olduğunuzu belirleme | IP adresinizi, "konumlarını yaklaşık olarak belirlemek için bir coğrafi konum veritabanında" aramak |
+| Korumalı bir işlemi gönderip aldığınızı ve bunun ne zaman olduğunu belirleme | Gönderim, "bağlantı şifreli olsa bile görünür olan daha fazla bant genişliği kullanır". Model, gönderme ve alma eyleminin sunucunun kendisi tarafından görülebildiğini belirtir |
+| Zaman içinde kaç işlem yaptığınızı sayma | Daha uzun bir süre boyunca gözlemlenen aynı bant genişliği örüntüleri |
+| Tekrarlayan ödeme örüntülerini saptama | Etkinliğin ne zaman gerçekleştiğini gözlemlemek |
+| Bir adresin size ait olup olmadığını anlama | Bir adresi zaten bilen bir saldırgan, "o adrese fon gönderebilir ve cüzdanınızdan bunu getirmesi sırasında bant genişliği sıçramaları olup olmadığını izleyebilir" |
 
-Model ayrıca, olağan durumda "a trust relationship between the user and the lightwalletd server operator" varsayıldığını da belirtir.
+Model ayrıca olağan durumda "kullanıcı ile lightwalletd sunucusu işletmecisi arasında bir güven ilişkisi" varsayıldığını belirtir.
 
-Dolayısıyla dürüst özet şudur. Bir light wallet sunucusu paranızı harcayamaz ve shielded işlemlerinizdeki tutarları veya memoları okuyamaz. Öğrenmek için en uygun konumda olduğu şey, IP adresiniz ve etkinliğinizin zamanlamasıdır; bu ikisi birlikte bir kişi hakkında çok şey söyleyebilir. Shielded işlemler, blokzincirde olanları korur. Tek başlarına, sunucuyla olan bağlantınızı gizlemezler.
+Dolayısıyla dürüst özet şudur: Bir hafif cüzdan sunucusu paranızı harcayamaz ve korumalı işlemlerinizdeki tutarları veya notları okuyamaz. Öğrenmek için elverişli olduğu şey IP adresiniz ve etkinliğinizin zamanlamasıdır; bu ikisi birlikte bir kişi hakkında çok şey söyleyebilir. Korumalı işlemler blokzincirde olup biteni korur. Tek başlarına, sunucuyla bağlantınızı gizlemezler.
 
-## Tor üzerinden yönlendirme
+## Görsel / Benzetme
 
-Tor, IP adresiniz ile cüzdan trafiğiniz arasındaki bağı koparır; bu da yukarıdaki tablodaki en güçlü tanımlayıcıyı ortadan kaldırır.
+Şimdiye kadar basılmış her gazeteyi tutan bir halk kütüphanesi düşünün. Tam düğüm, tüm arşivi eve götüren bir okuyucudur. Hafif cüzdan ise bunun yerine kütüphaneciden günlük bir özet isteyen bir okuyucudur — kendisiyle ilgili bir şey olup olmadığını anlamaya yetecek kadar bilgi taşıyan ince bir sayfa.
 
-Destek, birçok Zcash cüzdanının üzerine inşa edildiği Rust kütüphanelerinde mevcuttur. zcash_client_backend, Tor’un Rust uygulaması olan [Arti](https://tpo.pages.torproject.net/core/arti/) üzerine kurulu bir Tor modülü içerir; böylece bir cüzdan, ayrı bir Tor istemcisi sunmadan senkronizasyonu, işlem yayınlamayı ve fiyat sorgularını Tor üzerinden yönlendirebilir.
+Özet mühürlüdür: Kütüphaneci hangi öğelerin sizin için önemli olduğunu okuyamadan onu hazırlar ve siz onu evde kendi anahtarınızla açarsınız. Bu, sıkıştırılmış bloktur; açma işlemi de cihazınızdaki deneme amaçlı şifre çözmedir.
 
-Zaino geliştiricileri de aynı argümanı öne sürüyor ve tehdit modeline doğrudan atıfta bulunuyor: istemcilerin kimliklerini Zcash’in indeksleme sunucularından gizlemek için "a need to use anonymous transport protocols (such as Nym or Tor)" vardır.
+Ancak kütüphaneci yine de hangi okuyucunun içeri girdiğini, ne zaman geldiğini ve dışarı ne kadar kalın bir paket taşıdığını görür. Bu, zarf ne kadar iyi mühürlenmiş olursa olsun masadan görülebilen IP adresi ve zamanlamadır. Tor, anonim bir kurye göndermenin karşılığıdır: kütüphaneci aynı paketi teslim eder, ancak artık paketin hangi eve gittiğini bilmez.
 
-**ZODL** içinde Tor, Advanced Settings altında bir ayardır. Cüzdanın sürüm notları, "prefer to reduce metadata exposure" eden kullanıcılara "plus enabling Tor in Advanced Settings" ile manuel bağlantı modunu önerir; ayrıca uygulama, bir cüzdanı geri yüklemeden önce Tor’u açmayı teklif eder ki bu, aksi takdirde yeni bir IP’nin tüm cüzdan geçmişiyle ilişkilendirilebileceği andır.
+## Derinlemesine İnceleme
 
-İki uyarı. Tor, IP’nizi sunucudan gizler, ancak sunucunun yaptığınız isteklerden öğrendiği şeyi değiştirmez. Ve onion routing gecikme ekler, bu yüzden senkronizasyon daha uzun sürer. Kendi sunucunuzu çalıştırmak ise güven meselesini farklı bir şekilde ortadan kaldırır; çünkü bu durumda operatör siz olursunuz.
+### Tor üzerinden yönlendirme
 
-## Zaino, Rust indeksleyicisi
+Tor, IP adresiniz ile cüzdan trafiğiniz arasındaki bağlantıyı keser; bu da yukarıdaki tablodaki en güçlü tanımlayıcıyı ortadan kaldırır.
 
-[Zaino](/site/Zcash_Tech/Zaino), Zingo ekibi tarafından Rust ile yazılmış, zcashd kullanım dışı bırakma çalışmasının bir parçası olarak lightwalletd’nin yerini almak üzere geliştirilmiş bir indeksleyicidir. Light client’lara, full client’lara ve block explorer’lara hizmet verir; zincir verilerini "either a Zebra or Zcashd full validator" tarafından tutulan verilerden okur.
+Birçok Zcash cüzdanının üzerine inşa edildiği Rust kütüphanelerinde destek bulunmaktadır. zcash_client_backend, Tor'un Rust uygulaması olan [Arti](https://tpo.pages.torproject.net/core/arti/) üzerine kurulmuş bir Tor modülü içerir; böylece bir cüzdan, ayrı bir Tor istemcisi dağıtmadan senkronizasyonu, işlem yayınını ve fiyat sorgularını Tor üzerinden yönlendirebilir.
 
-Aktif geliştirme altındadır; 0.7.0 sürümü Ağustos 2026’da yayımlanmıştır. Mümkün olduğunda lightwalletd ile geriye dönük uyumlu kalmayı hedefler; böylece cüzdanlar yeniden yazılmadan ona yönlendirilebilir.
+Zaino geliştiricileri, doğrudan tehdit modeline atıf yaparak aynı görüşü savunur: "istemcilerin kimliklerini Zcash'in indeksleme sunucularından gizlemek için anonim taşıma protokollerinin (Nym veya Tor gibi) kullanılması ihtiyacı" vardır.
 
-Zaino’nun mimari diyagramları içeren kendi sayfası vardır; bu nedenle bu sayfa yalnızca onun bir light wallet sunucusu olarak rolünü kapsar.
+**ZODL** içinde Tor, Gelişmiş Ayarlar'da bulunan bir ayardır. Cüzdanın sürüm notları, "meta veri maruziyetini azaltmayı tercih eden" kullanıcılara "Gelişmiş Ayarlar'da Tor'u etkinleştirmenin yanı sıra" manuel bağlantı modunu önerir; ayrıca uygulama, yeni bir IP'nin aksi hâlde tüm cüzdan geçmişiyle ilişkilendirileceği an olan cüzdan geri yükleme işleminden önce Tor'u açmayı teklif eder.
 
-## Sunucu listesi
+İki uyarı. Tor, IP'nizi sunucudan gizler, ancak yaptığınız isteklerden sunucunun öğrendiklerini değiştirmez. Ayrıca onion yönlendirme gecikme ekler; dolayısıyla senkronizasyon daha uzun sürer. Kendi sunucunuzu çalıştırmak güven meselesini farklı şekilde ortadan kaldırır, çünkü bu durumda işletmeci siz olursunuz.
 
-[hosh.zec.rocks](https://hosh.zec.rocks/zec) panosu, herkese açık sunucuları ve sağlık durumlarını takip eder; gerçekten hangilerinin çalışır durumda olduğunu kontrol etmek için gidilecek yerdir. [status.zec.rocks](https://status.zec.rocks/) ise hizmet durumunu gösterir.
+### Rust indeksleyicisi Zaino
 
-Bu yazının yazıldığı sırada o panoda listelenen sunucular:
+[Zaino](/zcash-tech/zaino), Zingo ekibi tarafından Rust ile yazılmış, zcashd kullanım dışı bırakma çalışmasının bir parçası olarak lightwalletd'nin yerini alması için geliştirilen bir indeksleyicidir. Hafif istemcilere, tam istemcilere ve blok gezginlerine hizmet verir; "Zebra veya Zcashd tam doğrulayıcısının herhangi biri tarafından tutulan" zincir verilerini okur.
+
+Ağustos 2026'da yayımlanan 0.8.0 sürümüyle aktif geliştirme altındadır. Mümkün olduğunda lightwalletd ile geriye dönük uyumlu kalmayı hedefler; böylece cüzdanlar yeniden yazılmadan ona yönlendirilebilir.
+
+Zaino'nun mimari diyagramlarını içeren kendi sayfası vardır; bu nedenle bu sayfa yalnızca hafif cüzdan sunucusu olarak rolünü ele alır.
+
+### Kendi sunucunuzu çalıştırma
+
+En güçlü seçenek, güven meselesini tamamen ortadan kaldıran kendi işletmeciniz olmaktır. Her iki sunucu da açık kaynaklıdır: Go ile yazılmış [lightwalletd](https://github.com/zcash/lightwalletd) ve Rust ile yazılmış [Zaino](https://github.com/zingolabs/zaino). Her ikisi de tam doğrulayıcıdan okur; bu nedenle [Zebra](/zcash-tech/zebra-full-node)'ya da ihtiyaç duyarsınız.
+
+## Pratik Çıkarımlar
+
+### Sunucu listesi
+
+[hosh.zec.rocks](https://hosh.zec.rocks/zec) panosu herkese açık sunucuları ve sağlık durumlarını izler; gerçekten hangi sunucuların çalışır durumda olduğunu kontrol etmek için başvurulacak yerdir. [status.zec.rocks](https://status.zec.rocks/) hizmet durumunu gösterir.
+
+Yazım sırasında bu panoda listelenen sunucular:
 
 | Sunucu | Notlar |
 |:--|:--|
-| zec.rocks:443 | Bunun yanında na.zec.rocks, eu.zec.rocks, ap.zec.rocks ve sa.zec.rocks bölgesel uç noktaları da listelenmiştir |
-| zec-node.cakewallet.com:443 | Cake Wallet’ın alan adında |
-| zec.0xrpc.io:443 | Bir dizi zincir için ücretsiz herkese açık uç noktalar sunan ve kapasiteyi karşılamak için bağış isteyen 0xRPC tarafından işletiliyor |
-| zaino.unsafe.zec.rocks:443 | Bir Zaino örneği. Host adına dikkat edin, deneysel olarak değerlendirin |
-| testnet.zec.rocks:443 | Testnet; burada zaino.testnet.unsafe.zec.rocks adresinde bir Zaino testnet örneği de listelenmiştir |
+| zec.rocks:443 | Bunun yanında na.zec.rocks, eu.zec.rocks, ap.zec.rocks ve sa.zec.rocks bölgesel uç noktaları listelenir |
+| zec-node.cakewallet.com:443 | Cake Wallet'ın alan adında |
+| zec.0xrpc.io:443 | Birden çok zincir için ücretsiz herkese açık uç noktalar sunan ve kapasite maliyetlerini karşılamak için bağış isteyen 0xRPC tarafından işletilir |
+| zaino.unsafe.zec.rocks:443 | Bir Zaino örneği. Ana makine adına dikkat edin; deneysel olarak değerlendirin |
+| testnet.zec.rocks:443 | Testnet; zaino.testnet.unsafe.zec.rocks adresinde listelenmiş bir Zaino testnet örneğiyle birlikte |
 
-Bu listeye güvenmek yerine panoyu kontrol edin. Operatörler gelir gider ve böyle bir sayfa zamanla eskiyebilir.
+Bu listeye güvenmek yerine panoyu kontrol edin. İşletmeciler gelir ve gider; böyle bir sayfa zamanla eskir.
 
-## Cüzdanınızdaki sunucuyu değiştirme
+### Cüzdanınızdaki sunucuyu değiştirme
 
-Güvendiğiniz bir operatörü seçmek, etkinliği farklı operatörlere dağıtmak veya kendi sunucunuza yönlendirmek istiyorsanız yapmaya değer.
+Güvendiğiniz bir işletmeciyi seçmek, etkinliği işletmeciler arasında dağıtmak veya kendi sunucunuza yönlendirmek istiyorsanız yapmaya değer.
 
-Aşağıdaki menü yolları bu sayfa güncellendiğinde doğruydu, ancak cüzdan arayüzleri değişebilir; bu yüzden bunları tam bir rota değil, bir ipucu olarak görün. Advanced Settings ya da bir sunucu seçeneğini arayın.
+Aşağıdaki menü yolları bu sayfa güncellendiğinde doğruydu, ancak cüzdan arayüzleri değişebilir; bu nedenle onları kesin bir yol yerine ipucu olarak değerlendirin. Gelişmiş Ayarlar veya bir sunucu seçeneği arayın.
 
 #### ZODL
 
-Eskiden Zashi idi. Sağ üst köşedeki dişli simgesi, ardından Advanced Settings. Tor da aynı ekranda yer alır. ZODL ayrıca, bir senkronizasyon hatası sunucunun güncel olmamasından kaynaklandığında bir Switch server kısayolu da sunar.
+Eskiden Zashi olarak biliniyordu. Sağ üst köşedeki dişli simgesi, ardından Gelişmiş Ayarlar. Tor aynı ekranda bulunur. ZODL ayrıca, senkronizasyon hatasına sunucunun güncel olmaması neden olduğunda Sunucuyu değiştir kısayolu sunar.
 
 #### Ywallet
 
@@ -100,24 +125,38 @@ Sağ üst köşedeki dişli simgesi, ardından Zcash sekmesi.
 
 #### Zingo
 
-Sol üst köşedeki hamburger menü, ardından Settings, sonra aşağı kaydırın.
+Sol üst köşedeki hamburger menü, ardından Ayarlar ve sonra aşağı kaydırın.
 
 ![Zingo sunucu ayarları](/content-images/ea8f7672-e644-41a5-a422-db131740404a-2626f5fa79.webp)
 
 #### eZcash
 
-Sol üst köşedeki hamburger menü, ardından Settings, sonra Advanced.
+Sol üst köşedeki hamburger menü, ardından Ayarlar ve sonra Gelişmiş.
 
 ![eZcash sunucu ayarları](/content-images/655c0172-61a0-4322-b8cf-4eee4bb53b51-0b93df2e71.webp)
 
-Bu ekran görüntüleri Mart 2025’te alındı ve uygulamalar o zamandan beri yeni sürümler yayımladı, bu nedenle düğmeler yer değiştirmiş olabilir.
+Bu ekran görüntüleri Mart 2025'te alındı ve uygulamalar o zamandan beri sürümler yayımladı; dolayısıyla düğmeler yer değiştirmiş olabilir.
 
-## Kendi sunucunuzu çalıştırma
+## Yaygın Hatalar
 
-En güçlü seçenek, güven sorusunu tamamen ortadan kaldıran şekilde kendi operatörünüz olmaktır. Her iki sunucu da açık kaynaklıdır: Go ile yazılmış [lightwalletd](https://github.com/zcash/lightwalletd) ve Rust ile yazılmış [Zaino](https://github.com/zingolabs/zaino). Her ikisi de bir full validator’dan veri okur, bu yüzden ayrıca [Zebra](/site/Zcash_Tech/Zebra_Full_Node) da isteyeceksiniz.
+**Sunucunun işlemlerinizi okuyabileceğini düşünmek**. Okuyamaz. Anahtarlarınız cihazınızda kalır ve tamamen korumalı işlemlerin içindeki tutarlar ve notlar — sunucuyu ele geçirmiş bir saldırgana karşı bile — şifreli kalır.
+
+**"Korumalı"yı "anonim bağlantı" olarak okumak**. Korumalı işlemler blokzincirde olup biteni korur. IP adresiniz ve etkinliğinizin zamanlaması ayrı bir katmandır; sunucunun gördüğü katman da tam olarak budur.
+
+**Tor'un her izi ortadan kaldırdığını varsaymak**. Tor, IP'nizi sunucudan gizler; ancak yaptığınız isteklerden sunucunun öğrendiklerini değiştirmez ve senkronizasyona gecikme ekler.
+
+**Bir wiki sayfasındaki sunucu listesine güvenmek**. İşletmeciler gelir ve gider. Cüzdanınızı herhangi bir şeye yönlendirmeden önce gerçekten neyin çalıştığını görmek için [hosh.zec.rocks](https://hosh.zec.rocks/zec)'u kontrol edin.
 
 ## Özet
 
-Light wallet’lar size disk alanı gerektirmeden shielded pool’u sunar; bu iyi bir takastır. Sadece neyi takas ettiğinizi net olarak bilin. Sunucu fonlarınızı alamaz veya shielded tutarlarınızı okuyamaz, ancak IP adresinizi ve ne zaman işlem yaptığınızı görmek için çok uygun bir konumdadır. Tor üzerinden yönlendirin, operatörünüzü bilinçli seçin ya da kendi sunucunuzu çalıştırın.
+Hafif cüzdanlar, disk alanına gerek duymadan size korumalı havuzu sunar; bu iyi bir takastır. Yalnızca neyi takas ettiğiniz konusunda net olun. Sunucu fonlarınızı alamaz veya korumalı tutarlarınızı okuyamaz, ancak IP adresinizi ve ne zaman işlem yaptığınızı görmek için elverişli bir konumdadır. Tor üzerinden yönlendirin, işletmecinizi bilinçli seçin veya kendi sunucunuzu çalıştırın.
+
+## İlgili Sayfalar
+
+- [Zcash Ödemenizi Kimler Görebilir](/start-here/who-can-see-your-zcash-payment) — aynı sorunun başlangıç seviyesindeki görünümü.
+- [Bir Blok Gezgini Neleri Görebilir](/zcash-tech/what-a-block-explorer-can-see) — sunucu düzeyinde görünenlerin aksine, zincir üzerinde görünenler.
+- [Zaino](/zcash-tech/zaino) — mimari diyagramlar ve Rust indeksleyicisinin daha geniş rolü.
+- [Zebra Tam Düğümü](/zcash-tech/zebra-full-node) — hafif cüzdan sunucusunun okuduğu doğrulayıcı.
+- [Zcash Cüzdan Senkronizasyonu](/zcash-tech/zcash-wallet-syncing) — bir sunucunun gönderdiği sıkıştırılmış blokların cüzdanınız tarafından nasıl işlendiği.
 
 **Son güncelleme:** Ağustos 2026
