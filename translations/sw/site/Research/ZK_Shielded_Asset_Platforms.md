@@ -58,7 +58,7 @@ Kwa mfano, fikiria orodha ya NFT kwenye Solana; hali yake ya umma (kwa mfano, be
 ***
 
 
-** [Ironfish Mtandao](https://ironfish.network/)**: Ironfish encrypts kila shughuli, kulinda nyeti yako mali habari kutoka kwa maoni ya umma. Kwa kusoma tu kuona funguo, wewe kubaki kufuata na katika udhibiti. chuma samaki ni madaraka safu 1 blockchain, ushahidi wa kazi (PoW) msingi, upinzani-censorship, na hadharani kupatikana mradi blockchain. Ni iliyoundwa ili kusaidia dhamana kali faragha juu ya kila manunuzi - Asset Swap**: Ndiyo - [Whitepaper](https://ironfish.network/learn/whitepaper) - ![Ironfish.png](/content-images/kxDDjheA_400x400-2aca14fa6f.webp)
+** [Iron Fish Mtandao](https://ironfish.network/)**: Iron Fish encrypts kila shughuli, kulinda nyeti yako mali habari kutoka kwa maoni ya umma. Kwa kusoma tu kuona funguo, wewe kubaki kufuata na katika udhibiti. chuma samaki ni madaraka safu 1 blockchain, ushahidi wa kazi (PoW) msingi, upinzani-censorship, na hadharani kupatikana mradi blockchain. Ni iliyoundwa ili kusaidia dhamana kali faragha juu ya kila manunuzi - Asset Swap**: Ndiyo - [Whitepaper](https://ironfish.network/learn/whitepaper) - ![Iron Fish.png](/content-images/kxDDjheA_400x400-2aca14fa6f.webp)
 ***
 
 

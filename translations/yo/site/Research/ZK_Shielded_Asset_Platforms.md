@@ -58,7 +58,7 @@ Fun apẹẹrẹ, ro akojọ NFT lori Solana; ipo gbangba rẹ (fun apẹẹrẹ
 ***
 
 
-**[Ìpínlẹ̀ Ẹja Irin](https://ironfish.network/)Ironfish jẹ́ ẹ̀ka ìsókè 1 blockchain, èrí-iṣẹ (PoW) ti o da lori, àyẹwò-ìdìbò, àti iṣẹ́ tí ó wà fún gbogbo ènìyàn. A ṣe é láti ṣètẹlé ìdánilójú àṣírí tó lágbára lórí ètò ìṣọ̀kan ọ̀kọ̀ọ̀kàn - ** Asset Swap**: Bẹẹni - [Whitepaper](https://ironfish.network/learn/whitepaper) - ![Ironfish.png](/content-images/kxDDjheA_400x400-2aca14fa6f.webp)
+**[Ìpínlẹ̀ Ẹja Irin](https://ironfish.network/)Iron Fish jẹ́ ẹ̀ka ìsókè 1 blockchain, èrí-iṣẹ (PoW) ti o da lori, àyẹwò-ìdìbò, àti iṣẹ́ tí ó wà fún gbogbo ènìyàn. A ṣe é láti ṣètẹlé ìdánilójú àṣírí tó lágbára lórí ètò ìṣọ̀kan ọ̀kọ̀ọ̀kàn - ** Asset Swap**: Bẹẹni - [Whitepaper](https://ironfish.network/learn/whitepaper) - ![Iron Fish.png](/content-images/kxDDjheA_400x400-2aca14fa6f.webp)
 ***
 
 
