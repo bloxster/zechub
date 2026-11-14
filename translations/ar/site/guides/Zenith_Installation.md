@@ -1,12 +1,12 @@
-# تثبيت محفظة Zenith GUI ذات العقدة الكاملة  
+# تثبيت محفظة (wallet) العقدة الكاملة (full node) Zenith ذات الواجهة الرسومية (GUI)  
 
-## شرح فيديو
+## فيديو تعليمي
 
 <div className="my-8 w-full aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg bg-black">
   <iframe
     className="w-full h-full"
     src="https://www.youtube.com/embed/zu8nvr4FlXE"
-    title="تثبيت وعرض توضيحي لمحفظة Zenith ذات العقدة الكاملة"
+    title="Zenith Full Node Wallet Installation & Demo"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowFullScreen
     loading="lazy"
@@ -20,7 +20,7 @@
   <iframe
     className="w-full h-full"
     src="https://www.youtube.com/embed/-gawirv0L_U"
-    title="استخدام RPC's مع Zebrad + Zenith"
+    title="Using RPC's with Zebrad + Zenith"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowFullScreen
     loading="lazy"
@@ -41,18 +41,20 @@
 
 > sudo apt install libclang-dev
 
-> cargo install --git https://github.com/ZcashFoundation/zebra --tag v2.1.0 zebrad
+> cargo install --git https://github.com/ZcashFoundation/zebra --tag v7.0.0 zebrad
+
+استخدم Zebra 7.0.0 أو أحدث، فقد جرى تفعيل NU7 على الشبكة الرئيسية (Mainnet) عند الكتلة (block) 3,543,405، ولا تستطيع الإصدارات الأقدم من `zebrad` متابعة السلسلة (chain) بعد هذا الارتفاع ([تفاصيل الإصدار](https://github.com/ZcashFoundation/zebra/releases/tag/v7.0.0)). إصدار Zenith المذكور أدناه (0.7.2.0-beta) قديم، إذ إن أحدث إصدار وقت كتابة هذا الدليل هو 0.13.0.0-beta (يونيو 2026، مع دعم NU6.2). راجع [إصدارات Zenith](https://code.vergara.tech/Vergara_Tech/zenith/releases) للعثور على إصدار يدعم NU7 قبل استخدامه على الشبكة الرئيسية.
 
 > zebrad generate -o ~/.config/zebrad.toml
 
 > nano ~/.config/zebrad.toml
 
 
-#### الاستماع إلى استعلامات RPC على localhost
+#### الاستماع لاستعلامات RPC على localhost
 
 > listen_addr = "127.0.0.1:8232"
 
-#### استخدام عدة خيوط CPU تلقائيًا
+#### استخدام عدة خيوط معالجة (CPU threads) تلقائيًا
 
 parallel_cpu_threads = 0
 
@@ -60,7 +62,7 @@ enable_cookie_auth = false
 
 ## تثبيت Zenith
 
-**نزّل ملف tar.gz وفك ضغطه داخل الدليل الرئيسي الخاص بك**
+**نزّل ملف tar.gz وفك ضغطه في مجلد المنزل الخاص بك**
 
 > wget https://code.vergara.tech/Vergara_Tech/zenith/archive/0.7.2.0-beta.tar.gz
 
@@ -73,7 +75,7 @@ enable_cookie_auth = false
 > git clone https://code.vergara.tech/Vergara_Tech/zcash-haskell.git
 
 
-### تثبيت التبعيات
+### تثبيت الاعتماديات
 
 > sudo apt install libssl-dev libgmp-dev libsecp256k1-dev libtinfo-dev libsdl2-dev libfreetype-dev libglew-dev gdk-pixbuf-tests raspi-config
   
@@ -88,17 +90,17 @@ enable_cookie_auth = false
 > source ~/.bashrc
 
 
-### تعديل المصدر لـ aarch64
+### تعديل الشيفرة المصدرية لـ aarch64
 
 > nano configure
 
-**غيّر triple إلى: "aarch64-unknown-linux-gnu" في كلا السطرين.**
+**غيّر الثلاثية (triple) إلى: «aarch64-unknown-linux-gnu» في كلا السطرين.**
 
 > nano Setup.hs
  
- **عدّل Setup.hs في كلٍّ من مجلد zcash-haskell ومجلد zenith**
+ **عدّل ملف Setup.hs في كل من مجلد zcash-haskell ومجلد zenith**
 
-### الترجمة البرمجية 
+### الترجمة البرمجية (Compile) 
 
 - ./configure
 
@@ -142,7 +144,7 @@ zebraPort = 8232
   
 > sudo raspi-config
 
-  **اذهب إلى advanced ثم اختر opengl => GL (Full KMS)**
+  **انتقل إلى advance واختر opengl => GL (Full KMS)**
 
   **أعد التشغيل**
 
@@ -151,11 +153,11 @@ zebraPort = 8232
 ## تشغيل zenith
 
  ./zenith gui
- or
+ أو
  ./zenith tui
- or
+ أو
  ./zenithserver
 
-## RPC's
+## استدعاءات RPC
 
-[كيفية القيام بذلك](https://github.com/ZecHub/zechub/blob/main/site/tutorials/zenithserver/zenithBeta.md)
+[دليل الاستخدام](https://github.com/ZecHub/zechub/blob/main/site/tutorials/zenithserver/zenithBeta.md)

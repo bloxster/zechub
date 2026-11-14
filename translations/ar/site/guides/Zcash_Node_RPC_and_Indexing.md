@@ -1,44 +1,44 @@
 <a href="https://github.com/zechub/zechub/edit/main/site/guides/Zcash_Node_RPC_and_Indexing.md" target="_blank">
-  <img src="https://img.shields.io/badge/Edit-blue" alt="تعديل الصفحة"/>
+  <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# دليل عملي: عقدة Zcash وRPC وفهرسة blockchain
+# دليل عملي: RPC لعقدة (node) Zcash وفهرسة سلسلة الكتل (blockchain)
 
-هذه الصفحة دليل عملي للتواصل مع عقدة كاملة Zcash قيد التشغيل عبر JSON-RPC، ولربط مفهرس يمكن للمحافظ الخفيفة والمستكشفات الاستعلام منه. وهي **ليست** دليلاً ثانياً للتثبيت.
+هذه الصفحة دليل وصفات للتواصل مع عقدة كاملة (full node) Zcash قيد التشغيل عبر JSON-RPC، ولربط مُفهرِس (indexer) يمكن للمحافظ (wallets) الخفيفة ومستكشفات الكتل الاستعلام منه. إنها **ليست** دليل تثبيت ثانياً.
 
-لمعرفة كيفية تشغيل حزمة ما بعد-`zcashd` (Zebra + Zallet، وZaino اختياري، والمنافذ، ووحدات التخزين، والإقلاع ذي المرحلتين)، استخدم صفحة [Z3 Stack](/zcash-tech/z3-stack) ومستودع [Z3](https://github.com/ZcashFoundation/z3). وللاطلاع على خلفية عقدة الإجماع، راجع [العقد الكاملة](/zcash-tech/full-nodes) و[العقدة الكاملة Zebra](/zcash-tech/zebra-full-node).
+لمعرفة كيفية تشغيل حزمة ما بعد `zcashd` (Zebra + Zallet، وـ Zaino الاختياري، والمنافذ، ووحدات التخزين، والإقلاع على مرحلتين)، استخدم صفحة [حزمة Z3](/zcash-tech/z3-stack) و[مستودع Z3](https://github.com/ZcashFoundation/z3). للاطلاع على خلفية عقد الإجماع (consensus)، راجع [العقد الكاملة](/zcash-tech/full-nodes) و[العقدة الكاملة Zebra](/zcash-tech/zebra-full-node).
 
-وصلت `zcashd` إلى نهاية عمرها في 18 يوليو 2026. ينبغي أن يستهدف عمل المشغّلين الجدد Zebra (أو [Zakura](/zcash-tech/zakura-node)) بالإضافة إلى محفظة/مفهرس، وليس `zcashd`.
+وصل `zcashd` إلى نهاية عمره في 18 يوليو 2026. ينبغي أن يستهدف عمل المشغّلين الجديد Zebra (أو [Zakura](/zcash-tech/zakura-node)) إلى جانب محفظة/مُفهرِس، لا `zcashd`.
 
 ---
 
-## الخلاصة
+## الخلاصة (TL;DR)
 
-* يتيح **JSON-RPC** للمشغّلين والمحافظ سؤال عقدة عن رأس السلسلة والأقران، وعن الأرصدة في حالة عملية المحفظة. في Z3، تقدّم Zebra RPC للعقدة؛ وتقدّم Zallet RPC للمحفظة.
-* تُعد **Regtest** المكان المناسب لتعلّم الاستدعاءات. يقبل موجّه rpc-router الخاص بـ Z3 على `http://127.0.0.1:8181` بيانات `zebra` / `zebra` ويحوّل أساليب العقدة إلى Zebra وأساليب المحفظة إلى Zallet.
-* تستخدم **Mainnet وtestnet** مصادقة ملفات تعريف الارتباط على Zebra. لا تنسخ اسم المستخدم/كلمة المرور الخاصة بـ regtest إلى عقدة عامة.
-* تُعد **الفهرسة** مهمة منفصلة عن التحقق. تتحقق Zebra. وتقدّم [Zaino](/zcash-tech/zaino) (Z3 `--profile indexer`) واجهة gRPC متوافقة مع lightwalletd. أما [Ztreamer](https://github.com/distractedm1nd/ztreamer) فهو مفهرس مدعوم بـ Zakura؛ وليس مما تشحنه Z3.
-* إن JSON-RPC الخاص بـ Zaino وgRPC الاختياري للمفهرس الخاص بـ Zebra مخصصان للاتصال المحلي أو لشبكة موثوقة. لا تكشفهما دون مصادقة على الإنترنت العام.
+* **JSON-RPC** هو الطريقة التي يسأل بها المشغّلون والمحافظ العقدةَ عن رأس السلسلة (chain) والأقران، و(في عملية المحفظة) عن الأرصدة. في Z3، يخدم Zebra واجهة RPC للعقدة؛ ويخدم Zallet واجهة RPC للمحفظة.
+* **Regtest** هو المكان المناسب لتعلّم الاستدعاءات. يقبل موجّه rpc-router الخاص بـ Z3 على `http://127.0.0.1:8181` بيانات الاعتماد `zebra` / `zebra` ويحوّل أساليب العقدة إلى Zebra وأساليب المحفظة إلى Zallet.
+* تستخدم **الشبكة الرئيسية (mainnet) وشبكة الاختبار (testnet)** مصادقة cookie على Zebra. لا تنسخ اسم المستخدم/كلمة المرور الخاصين بـ regtest إلى عقدة عامة.
+* **الفهرسة** مهمة منفصلة عن التحقق. يتحقق Zebra. ويخدم [Zaino](/zcash-tech/zaino) (`--profile indexer` في Z3) واجهة gRPC متوافقة مع lightwalletd. أما [Ztreamer](https://github.com/zcashlabs/ztreamer) فهو مُفهرِس مدعوم بـ Zakura؛ وليس ما تشحنه Z3.
+* إن واجهة JSON-RPC الخاصة بـ Zaino وواجهة gRPC للمُفهرِس الاختياري في Zebra مخصصتان لواجهة loopback أو لشبكة موثوقة. لا تعرضهما دون مصادقة على الإنترنت العام.
 
 ---
 
 ## أي عملية تجيب عن أي استدعاء
 
-| ما الذي تريده | تواصل مع | منفذ المضيف لـ Z3 mainnet | ملاحظات |
+| ما تريده | تواصل مع | منفذ المضيف على الشبكة الرئيسية في Z3 | تفاصيل |
 | --- | --- | --- | --- |
-| رأس السلسلة، الأقران، `getblockchaininfo` | JSON-RPC لـ Zebra | 8232 | مصادقة بملف تعريف الارتباط |
-| رصيد المحفظة، العناوين، الإرسال | RPC لـ Zallet | 28232 | عملية منفصلة؛ برمجية تجريبية |
-| الكتل المدمجة للمحافظ الخفيفة | gRPC لـ Zaino | 8137 | فقط مع `--profile indexer`؛ h2c بنص عادي |
-| وكيل JSON-RPC للمستكشف / الصنبور | JSON-RPC لـ Zaino | 8237 | شبكة موثوقة فقط |
-| تدرّب على كل ما سبق دون مزامنة | rpc-router لـ Z3 regtest | 8181 | اسم المستخدم `zebra` / كلمة المرور `zebra` |
+| رأس السلسلة، الأقران، `getblockchaininfo` | JSON-RPC لـ Zebra | 8232 | مصادقة cookie |
+| رصيد المحفظة، العناوين (addresses)، الإرسال | RPC لـ Zallet | 28232 | عملية منفصلة؛ برنامج تجريبي (beta) |
+| الكتل (blocks) المضغوطة للمحافظ الخفيفة | gRPC لـ Zaino | 8137 | فقط مع `--profile indexer`؛ h2c نصي غير مشفّر |
+| وكيل JSON-RPC للمستكشف / faucet | JSON-RPC لـ Zaino | 8237 | للشبكة الموثوقة فقط |
+| التدرّب على كل ما سبق دون مزامنة | rpc-router لـ regtest في Z3 | 8181 | اسم المستخدم `zebra` / كلمة المرور `zebra` |
 
-مصفوفة المنافذ وأسماء مشاريع Compose: [Z3 Stack](/zcash-tech/z3-stack) و[`z3-contract.yaml`](https://github.com/ZcashFoundation/z3/blob/main/z3-contract.yaml).
+مصفوفة المنافذ وأسماء مشاريع Compose: [حزمة Z3](/zcash-tech/z3-stack) و[`z3-contract.yaml`](https://github.com/ZcashFoundation/z3/blob/main/z3-contract.yaml).
 
 ---
 
 ## تدرّب على regtest أولاً
 
-من نسخة Z3 محلية، بعد `./scripts/regtest-init.sh` و`docker compose --env-file .env.regtest up -d`:
+من نسخة Z3 مسحوبة (checkout)، بعد `./scripts/regtest-init.sh` وـ `docker compose --env-file .env.regtest up -d`:
 
 ```bash
 # Node method (Zebra)
@@ -52,19 +52,19 @@ curl -s -X POST -H "Content-Type: application/json" \
   http://127.0.0.1:8181
 ```
 
-تتضمن نتيجة `getblockchaininfo` السليمة كلاً من `"blocks"` وخريطة `"upgrades"`. إذا علّق curl، فالموجّه ليس قيد التشغيل؛ وإذا تلقيت `401`، فأنت تتصل بـ Zebra مباشرةً بدلاً من الموجّه (توجد Zebra المباشرة على regtest في `29232` وما زالت تتوقع بيانات اعتماد الموجّه ما لم تغيّرها).
+تتضمن نتيجة `getblockchaininfo` السليمة `"blocks"` وخريطة `"upgrades"`. إذا تعلّق curl، فهذا يعني أن الموجّه (router) لا يعمل؛ وإذا حصلت على `401`، فأنت تتصل بـ Zebra مباشرة بدلاً من الموجّه (الوصول المباشر إلى Zebra على regtest يكون عبر `29232` وما زال يتوقع بيانات اعتماد الموجّه ما لم تغيّرها).
 
-سير عمل regtest الكامل، بما في ذلك تعدين كتل التفعيل: [Z3 `docs/regtest.md`](https://github.com/ZcashFoundation/z3/blob/main/docs/regtest.md).
+سير عمل regtest الكامل، بما في ذلك تعدين (mining) كتل التفعيل: [Z3 `docs/regtest.md`](https://github.com/ZcashFoundation/z3/blob/main/docs/regtest.md).
 
 ---
 
-## JSON-RPC لـ Mainnet / testnet (مصادقة ملفات تعريف الارتباط)
+## JSON-RPC على الشبكة الرئيسية / شبكة الاختبار (مصادقة cookie)
 
-على mainnet وtestnet، تقرأ Zallet وخدمة Zaino الاختيارية **وحدة تخزين مشتركة لملف تعريف الارتباط**. يُعاد توليد ملف تعريف الارتباط هذا عند الإقلاع؛ وهو ليس هدفاً للنسخ الاحتياطي.
+على الشبكة الرئيسية وشبكة الاختبار، يقرأ Zallet وخدمة Zaino الاختيارية **وحدة تخزين cookie مشتركة**. يُعاد توليد ملف cookie هذا عند الإقلاع؛ فهو ليس هدفاً للنسخ الاحتياطي.
 
-**لا** تنشر JSON-RPC لـ Zebra على الإنترنت العام. استدعه من شبكة Compose (`zebra:8232`) أو من المضيف فقط إذا ربطته بالاتصال المحلي.
+**لا** تنشر واجهة JSON-RPC الخاصة بـ Zebra على الإنترنت العام. استدعِها من شبكة Compose (`zebra:8232`) أو من المضيف فقط إذا ربطتها بواجهة loopback.
 
-فحوصات نموذجية للمشغّل بعد أن تصبح Zebra في حالة `/ready`:
+فحوصات المشغّل المعتادة بعد أن يصبح Zebra `/ready`:
 
 ```bash
 # Wait until Zebra is synced (Z3 helper)
@@ -74,25 +74,25 @@ curl -s -X POST -H "Content-Type: application/json" \
 docker compose --env-file .env.mainnet up -d
 ```
 
-إن `getblocktemplate` / `getmininginfo` هما RPC للتعدين. تحتاج المجمعات التي كانت لا تزال تتوقع عملية `zcashd` واحدة إلى Zebra (أو Zakura) للقوالب، بالإضافة إلى أي محفظة تستخدمها لمعاملة coinbase. راجع [مجمعات التعدين Zcash](/using-zcash/zcash-mining-pools) ودليل [الترحيل](/guides/migration-guide-zcashd-to-zebrad-zallet).
+إن `getblocktemplate` / `getmininginfo` هي استدعاءات RPC للتعدين. تحتاج المجمّعات (pools) التي كانت لا تزال تتوقع عملية `zcashd` واحدة إلى Zebra (أو Zakura) للقوالب، إضافةً إلى أي محفظة تستخدمها لمعاملة coinbase. راجع [مجمّعات التعدين لـ Zcash](/using-zcash/zcash-mining-pools) و[دليل الترحيل](/guides/migration-guide-zcashd-to-zebrad-zallet).
 
 ---
 
-## إرفاق مفهرس
+## ربط مُفهرِس
 
 التحقق والفهرسة مهمتان مختلفتان.
 
 ### Zaino (ما تشحنه Z3)
 
-تقرأ Zaino بيانات Zebra وتقدّم واجهة gRPC متوافقة مع lightwalletd بالإضافة إلى وكيل JSON-RPC. لا تحتاج Zallet إلى حاوية Zaino المستقلة؛ فهي تضم مكتبات Zaino وتتواصل مع Zebra عبر JSON-RPC. شغّل Zaino المستقلة عندما تريد محافظ خفيفة أو مستكشفات أو صنابير خارجية:
+يقرأ Zaino من Zebra ويخدم واجهة gRPC API متوافقة مع lightwalletd إضافةً إلى وكيل JSON-RPC. **لا** يحتاج Zallet إلى حاوية Zaino المستقلة؛ فهو يضمّن مكتبات Zaino ويتواصل مع Zebra عبر JSON-RPC. شغّل Zaino المستقل عندما تريد محافظ خفيفة خارجية أو مستكشفات أو faucet:
 
 ```bash
 docker compose --env-file .env.mainnet --profile indexer up -d
 ```
 
-انتظر حتى تتم مزامنة Zebra قبل توجيه العملاء إلى Zaino. قد يبطئ مفهرس مجمّع في طور اللحاق وبمستوى عالٍ من تزامن الجلب مُتحقق Zebra؛ أبقِ `fetch_concurrency` في الأرقام الأحادية المنخفضة حتى يلحق المفهرس.
+انتظر حتى تتم مزامنة Zebra قبل توجيه العملاء إلى Zaino. يمكن لمُفهرِس جماعي في مرحلة اللحاق يعمل بتزامن جلب عالٍ أن يبطئ أداة التحقق في Zebra؛ أبقِ `fetch_concurrency` عند أرقام آحاد منخفضة حتى يلحق المُفهرِس بالركب.
 
-gRPC لـ Regtest (نص عادي؛ المنفذ `28137`):
+gRPC على regtest (نص غير مشفّر؛ المنفذ `28137`):
 
 ```bash
 # From the Z3 repo, after: scripts/vendor.sh zaino
@@ -112,50 +112,50 @@ grpcurl -plaintext \
   cash.z.wallet.sdk.rpc.CompactTxStreamer/GetLatestBlock
 ```
 
-تعمل gRPC لـ Zaino عبر h2c بنص عادي على جميع الشبكات. أنهِ TLS عند وكيل عكسي إذا كان أي شيء خارج المضيف سيتصل. التفاصيل: [Zaino](/zcash-tech/zaino) و[Z3 `docs/regtest.md`](https://github.com/ZcashFoundation/z3/blob/main/docs/regtest.md).
+إن واجهة gRPC الخاصة بـ Zaino هي h2c نصي غير مشفّر على جميع الشبكات. أنهِ TLS عند وكيل عكسي إذا كان أي شيء من خارج المضيف سيتصل بها. التفاصيل: [Zaino](/zcash-tech/zaino) و[Z3 `docs/regtest.md`](https://github.com/ZcashFoundation/z3/blob/main/docs/regtest.md).
 
-### مفهرسات أخرى (ليست Z3)
+### مُفهرِسات أخرى (ليست Z3)
 
-* **lightwalletd** — خادم الكتل المدمجة الأقدم. لا يزال منشوراً في بيئات فعلية؛ Zaino هو مسار الخلف لهذا الدور.
-* **Ztreamer** — مفهرس مدعوم بـ Zakura وتنفيذ لـ `CompactTxStreamer`. ليس خدمة Z3. راجع مستودع [Ztreamer](https://github.com/distractedm1nd/ztreamer).
+* **lightwalletd** — خادم الكتل المضغوطة الأقدم. لا يزال منشوراً على أرض الواقع؛ ويمثّل Zaino المسار الخلف لهذا الدور.
+* **Ztreamer** — مُفهرِس مدعوم بـ Zakura وتطبيق لـ `CompactTxStreamer`. وهو ليس خدمة من خدمات Z3. راجع [مستودع Ztreamer](https://github.com/zcashlabs/ztreamer).
 * **Zebra `rpc.indexer_listen_addr`** — مستمع gRPC اختياري *داخل* Zebra. لا تتطلبه Z3 ولا تنشره إلى المضيف.
 
 ---
 
 ## أخطاء شائعة
 
-**استدعاء أساليب المحفظة على Zebra.** تنتمي `getwalletinfo` وRPC للإرسال إلى Zallet (أو محفظة أخرى)، وليس إلى عقدة الإجماع.
+**استدعاء أساليب المحفظة على Zebra.** تنتمي `getwalletinfo` واستدعاءات RPC للإرسال إلى Zallet (أو محفظة أخرى)، لا إلى عقدة الإجماع.
 
-**بدء Zallet قبل أن تصبح Zebra `/ready`.** ستدخل Zallet في حلقة إعادة تشغيل. استخدم `scripts/check-zebra-readiness.sh` على mainnet/testnet.
+**تشغيل Zallet قبل أن يصبح Zebra `/ready`.** سيدخل Zallet في حلقة إعادة تشغيل. استخدم `scripts/check-zebra-readiness.sh` على الشبكة الرئيسية/شبكة الاختبار.
 
-**نسخ `zebra`/`zebra` الخاصة بـ regtest إلى mainnet.** مصادقة ملفات تعريف الارتباط هي الإعداد الافتراضي لـ mainnet/testnet لسبب وجيه.
+**نسخ `zebra`/`zebra` الخاصين بـ regtest إلى الشبكة الرئيسية.** إن مصادقة cookie هي الإعداد الافتراضي للشبكة الرئيسية/شبكة الاختبار لسبب وجيه.
 
-**معاملة Zaino كعقدة كاملة.** تتحقق Zebra (أو Zakura). وتفهرس Zaino.
+**معاملة Zaino كعقدة كاملة.** يتحقق Zebra (أو Zakura). ويفهرس Zaino.
 
-**كشف JSON-RPC لـ Zaino أو gRPC للمفهرس لـ Zebra علناً.** تلك النقاط الطرفية مخصصة للاتصال المحلي أو لشبكة خاصة موثوقة.
+**عرض واجهة JSON-RPC الخاصة بـ Zaino أو واجهة gRPC لمُفهرِس Zebra للعامة.** هذه النقاط الطرفية مخصصة لواجهة loopback أو لشبكة خاصة موثوقة.
 
-**افتراض أن كل محفظة خفيفة تتحدث Zaino بالفعل.** تحقّق من الإصدار الحالي للمحفظة مقابل البروتوكول الذي تنفذه فعلياً.
+**افتراض أن كل محفظة خفيفة تتحدث Zaino بالفعل.** تحقّق من الإصدار الحالي للمحفظة مقابل البروتوكول الذي تنفّذه فعلياً.
 
 ---
 
 ## صفحات ذات صلة
 
-* [Z3 Stack](/zcash-tech/z3-stack) — التثبيت، المنافذ، وحدات التخزين، الإقلاع ذو المرحلتين
-* [Zaino](/zcash-tech/zaino) — دور المفهرس وملاحظات المشغّل
+* [حزمة Z3](/zcash-tech/z3-stack) — التثبيت، والمنافذ، ووحدات التخزين، والإقلاع على مرحلتين
+* [Zaino](/zcash-tech/zaino) — دور المُفهرِس وإرشادات للمشغّلين
 * [العقد الكاملة](/zcash-tech/full-nodes)
 * [العقدة الكاملة Zebra](/zcash-tech/zebra-full-node)
 * [عقد المحافظ الخفيفة](/zcash-tech/lightwallet-nodes)
 * [دليل الترحيل: من zcashd إلى Zebrad/Zallet](/guides/migration-guide-zcashd-to-zebrad-zallet)
-* [Zingolib ودليل Zaino](/guides/zingolib-and-zaino-tutorial)
+* [دليل Zingolib وـ Zaino التعليمي](/guides/zingolib-and-zaino-tutorial)
 
 ## الموارد
 
-* مستودع [Z3](https://github.com/ZcashFoundation/z3)
-* [دليل Z3 العملي لـ regtest (curl / grpcurl)](https://github.com/ZcashFoundation/z3/blob/main/docs/regtest.md)
-* [الأسئلة الشائعة لـ Z3](https://github.com/ZcashFoundation/z3/blob/main/docs/faq.md)
+* [مستودع Z3](https://github.com/ZcashFoundation/z3)
+* [دليل وصفات regtest في Z3 (curl / grpcurl)](https://github.com/ZcashFoundation/z3/blob/main/docs/regtest.md)
+* [الأسئلة الشائعة حول Z3](https://github.com/ZcashFoundation/z3/blob/main/docs/faq.md)
 * [Zebra](https://zebra.zfnd.org/)
 * [Zaino](https://github.com/zingolabs/zaino)
-* كتاب [Zallet](https://zcash.github.io/zallet/)
-* [Ztreamer](https://github.com/distractedm1nd/ztreamer)
+* [كتاب Zallet](https://zcash.github.io/zallet/)
+* [Ztreamer](https://github.com/zcashlabs/ztreamer)
 
 **آخر تحديث:** سبتمبر 2026

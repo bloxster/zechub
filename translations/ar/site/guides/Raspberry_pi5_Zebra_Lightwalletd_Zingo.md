@@ -1,16 +1,16 @@
 <a href="https://github.com/zechub/zechub/edit/main/site/guides/Raspberry_pi5_Zebra_Lightwalletd_Zingo.md" target="_blank">
-  <img src="https://img.shields.io/badge/Edit-blue" alt="تعديل الصفحة"/>
+  <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
 # RPi5 Zebra lightwalletd مع Zingo
 
-## شرح فيديو
+## فيديو تعليمي
 
 <div className="my-8 w-full aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg bg-black">
   <iframe
     className="w-full h-full"
     src="https://www.youtube.com/embed/FfH5jiX8pT0"
-    title="استخدام عقدة Zcash Zebra مع lightwalletd: شرح"
+    title="Using Zcash Zebra Node with lightwalletd: TUTORIAL"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowFullScreen
     loading="lazy"
@@ -25,11 +25,13 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo apt install libclang-dev clang pkg-config openssl protobuf-compiler npm
 ```
 
-## تجميع Zebra
+## تصريف Zebra
 
-[مستودع Zebra على GitHub](https://github.com/ZcashFoundation/zebra)
+[Zebra GitHub](https://github.com/ZcashFoundation/zebra)
 
-* `time cargo install --git https://github.com/ZcashFoundation/zebra --tag v3.1.0 zebrad`
+* `time cargo install --git https://github.com/ZcashFoundation/zebra --tag v7.0.0 zebrad`
+
+استخدم Zebra 7.0.0 أو أحدث. تم تفعيل NU7 على الشبكة الرئيسية (Mainnet) عند الكتلة (block) رقم 3,543,405، ولا تستطيع إصدارات `zebrad` الأقدم متابعة السلسلة (chain) بعد هذا الارتفاع ([ملاحظات الإصدار](https://github.com/ZcashFoundation/zebra/releases/tag/v7.0.0)). يحتاج Zebra 7 إلى Rust 1.91 أو أحدث (`rustup update`).
 
 ## إعداد zebrad.toml
 
@@ -43,13 +45,13 @@ sudo apt install libclang-dev clang pkg-config openssl protobuf-compiler npm
 
 * `zebrad start`
 
-## تجميع lightwalletd
+## تصريف lightwalletd
 
-* ثبّت go
+* ثبّت Go
 
 ```bash
-wget https://go.dev/dl/go1.25.5.linux-arm64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.25.5.linux-arm64.tar.gz go/
+wget https://go.dev/dl/go1.27.3.linux-arm64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.27.3.linux-arm64.tar.gz go/
 export PATH=$PATH:/usr/local/go/bin
 ```
 
@@ -78,7 +80,7 @@ export PATH=$PATH:~/go/bin
  sudo apt update
  sudo apt install nodejs
 ```
-إذا واجهت أي أخطاء، فإليك [بعض الطرق البديلة](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04) لتثبيت NodeJS.
+إذا واجهت أي أخطاء، ف[هنا](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04) بعض الطرق البديلة لتثبيت NodeJS.
 
 ## تثبيت Yarn
 
@@ -98,7 +100,7 @@ yarn dist:linux
 
 ## تشغيل Zingo-PC
 
-* يمكنك استخدام appimage، أو الملف الثنائي داخل المجلد unpacked
+* يمكنك استخدام appimage، أو الملف الثنائي الموجود في المجلد بعد فك ضغطه
 * استمتع! :)
 
 # المصادر
