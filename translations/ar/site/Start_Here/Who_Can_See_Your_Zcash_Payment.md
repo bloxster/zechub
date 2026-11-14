@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# من يستطيع رؤية الدفع (payment) الخاص بك في Zcash؟
+# من يستطيع رؤية الدفع الخاص بك في Zcash؟
 
 ## الخلاصة
 

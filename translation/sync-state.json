@@ -1895,7 +1895,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Privacy_Tools/2FA_Hardware_Devices.md": {
@@ -1951,7 +1951,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Privacy_Tools/Secure_Messengers.md": {
@@ -1983,7 +1983,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Privacy_Tools/Web_Browsers.md": {
@@ -1991,7 +1991,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5+glossary-v2",
+      "tool": "claude-opus-5-5+glossary-v2+handfix",
       "edited": false
     },
     "Research/Dash_Zcash_Orchard_Integration.md": {
@@ -2007,7 +2007,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Research/Grayscale_Zcash_ETF_ZCSH.md": {
@@ -2023,7 +2023,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Research/Navigating_the_Central_Bank_Digital_Currency.md": {
@@ -2047,7 +2047,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Research/What_25_Second_Blocks_Actually_Change.md": {
@@ -2063,7 +2063,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5+glossary-v2",
+      "tool": "claude-opus-5-5+glossary-v2+handfix",
       "edited": false
     },
     "Research/confidentiality-compared.md": {
@@ -2079,7 +2079,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Research/zcash-formal-verification-series/article-0/article-0-what-is-formal-verification.md": {
@@ -2167,7 +2167,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Start_Here/Development_Fund.md": {
@@ -2191,7 +2191,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Start_Here/New_User_Guide.md": {
@@ -2239,7 +2239,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Start_Here/Zcash_Monetary_Policy.md": {
@@ -2271,7 +2271,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Using_Zcash/Creators_and_Tips.md": {
@@ -2279,7 +2279,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Using_Zcash/Custodial_Exchanges.md": {
@@ -2287,7 +2287,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5+glossary-v2",
+      "tool": "claude-opus-5-5+glossary-v2+handfix",
       "edited": false
     },
     "Using_Zcash/DEX.md": {
@@ -2295,7 +2295,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Using_Zcash/Encifher_Swaps.md": {
@@ -2303,7 +2303,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Using_Zcash/Faucets.md": {
@@ -2351,7 +2351,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Using_Zcash/Payment_Request_URIs.md": {
@@ -2375,7 +2375,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Using_Zcash/Shielded_Pools.md": {
@@ -2399,7 +2399,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5+glossary-v2",
+      "tool": "claude-opus-5-5+glossary-v2+handfix",
       "edited": false
     },
     "Using_Zcash/Spend_Zcash/Top_10_Places_to_spend_ZEC.md": {
@@ -2415,7 +2415,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Using_Zcash/Transactions.md": {
@@ -2439,7 +2439,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Using_Zcash/Zallet_Quick_Reference_Guide.md": {
@@ -2463,7 +2463,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5+glossary-v2",
+      "tool": "claude-opus-5-5+glossary-v2+handfix",
       "edited": false
     },
     "Using_Zcash/Zecmap.md": {
@@ -2471,7 +2471,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Using_Zcash/Zimppy.md": {
@@ -2479,7 +2479,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "ZFAV_Club/Guides_for_Creators.md": {
@@ -2495,7 +2495,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "ZFAV_Club/Guides_for_Creators/AI_tools_for_offline.md": {
@@ -2503,7 +2503,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "ZFAV_Club/Guides_for_Creators/Community_Broadcasting.md": {
@@ -2599,7 +2599,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Community/ZCAP.md": {
@@ -2655,7 +2655,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5+glossary-v2",
+      "tool": "claude-opus-5-5+glossary-v2+handfix",
       "edited": false
     },
     "Zcash_Community/Zcash_Media.md": {
@@ -2679,7 +2679,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Community/Zcon_Vozes.md": {
@@ -2695,7 +2695,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Organizations/Electric_Coin_Company.md": {
@@ -2711,7 +2711,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Organizations/Obscura_Labs.md": {
@@ -2735,7 +2735,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Organizations/Valar_Group.md": {
@@ -2751,7 +2751,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Organizations/ZODL.md": {
@@ -2839,7 +2839,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5+glossary-v2",
+      "tool": "claude-opus-5-5+glossary-v2+handfix",
       "edited": false
     },
     "Zcash_Tech/Halo.md": {
@@ -2951,7 +2951,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Tech/Private_Information_Retrieval.md": {
@@ -3007,7 +3007,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Tech/Unified_Addresses.md": {
@@ -3015,7 +3015,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Tech/Viewing_Keys.md": {
@@ -3031,7 +3031,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Tech/Z3_Stack.md": {
@@ -3095,7 +3095,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Tech/Zebra_Full_Node.md": {
@@ -3103,7 +3103,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Tech/zk_SNARKS.md": {
@@ -3111,7 +3111,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Use_Cases/About.md": {
@@ -3135,7 +3135,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Use_Cases/Journalist_Privacy_Setup.md": {
@@ -3143,7 +3143,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Use_Cases/Keeping_Records_With_Shielded_ZEC.md": {
@@ -3151,7 +3151,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Use_Cases/Pay_For_Ai_With_Shielded_ZEC.md": {
@@ -3167,7 +3167,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Use_Cases/Receive_Donations_Privately.md": {
@@ -3231,7 +3231,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zero_to_Zero_Knowledge/Podcasts/Shielded_Transaction_Podcast.md": {
@@ -3239,7 +3239,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zero_to_Zero_Knowledge/Podcasts/The_ZK_Podcast.md": {
@@ -3247,7 +3247,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zero_to_Zero_Knowledge/Podcasts/The_Zcash_Podcast.md": {
@@ -3343,7 +3343,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "contribute/ZecWeekly_Newsletter.md": {
@@ -3391,7 +3391,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Blockchain_Explorers.md": {
@@ -3399,7 +3399,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Brave_Wallet_Guide.md": {
@@ -3407,7 +3407,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Crosslink_Feature_Net.md": {
@@ -3439,7 +3439,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Keystone_Zashi.md": {
@@ -3479,7 +3479,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/My_First_Zcash_Workbook.md": {
@@ -3495,7 +3495,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Nym_VPN.md": {
@@ -3511,7 +3511,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Raspberry_pi5_Zebra_Lightwalletd_Zingo.md": {
@@ -3535,7 +3535,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Using_ZEC_Privately.md": {
@@ -3543,7 +3543,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Using_ZEC_in_DeFi.md": {
@@ -3567,7 +3567,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Visualizing_Zcash_Addresses.md": {
@@ -3575,7 +3575,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Visualizing_the_Zcash_Network.md": {
@@ -3591,7 +3591,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Zcash_Devtool.md": {
@@ -3615,7 +3615,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Zenith_Installation.md": {
@@ -3623,7 +3623,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Zero-Knowledge_vs_Decoys.md": {
@@ -3631,7 +3631,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Zgo_Payment_Processor.md": {
@@ -3639,7 +3639,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Zingolib_and_Zaino_Tutorial.md": {
@@ -3679,7 +3679,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "tutorials/zenithserver/zenithBeta.md": {
@@ -3719,7 +3719,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "Zcash_Use_Cases/Donate_ZEC_And_Claim_A_US_Tax_Deduction.md": {
@@ -3743,7 +3743,7 @@
       "src_commit": "b6d3cfdaee69c548b1cfb85540897630b31f84a0",
       "engine": "llm",
       "mode": "full",
-      "tool": "claude-opus-5-5",
+      "tool": "claude-opus-5-5+handfix",
       "edited": false
     },
     "guides/Akash_Network_Zakura.md": {

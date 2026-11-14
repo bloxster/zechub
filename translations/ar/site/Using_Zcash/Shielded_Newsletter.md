@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# النشرة الإخبارية (newsletter) المحمية (shielded)
+# النشرة الإخبارية المحمية
 
 > أرسل note بصيغة markdown إلى قائمة من العناوين (addresses) المحمية على شكل مذكرات (memos) Zcash، باستخدام Zallet. تبقى قائمة المستلمين و note بعيدتين عن العناوين الشفافة (transparent).
 

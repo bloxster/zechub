@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# الخصوصية (privacy) في التعدين (mining) والتخزين (staking)
+# الخصوصية في التعدين والتخزين
 
 العائد الذي تحصل عليه بصفتك مُعدّنًا (miner) والمُنهي (finalizer) الخاص بك ليسا الشيء نفسه. لا تربط السلسلة (chain) بينهما أبدًا.
 

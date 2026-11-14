@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# دليل عملي: RPC لعقدة (node) Zcash وفهرسة سلسلة الكتل (blockchain)
+# دليل عملي: RPC لعقدة Zcash وفهرسة سلسلة الكتل
 
 هذه الصفحة دليل وصفات للتواصل مع عقدة كاملة (full node) Zcash قيد التشغيل عبر JSON-RPC، ولربط مُفهرِس (indexer) يمكن للمحافظ (wallets) الخفيفة ومستكشفات الكتل الاستعلام منه. إنها **ليست** دليل تثبيت ثانياً.
 

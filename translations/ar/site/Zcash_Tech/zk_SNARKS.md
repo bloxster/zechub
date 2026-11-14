@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# إثباتات المعرفة الصفرية (ZKP) و ZK-SNARKS
+# إثباتات المعرفة الصفرية و ZK-SNARKS
 
 ## باختصار
 

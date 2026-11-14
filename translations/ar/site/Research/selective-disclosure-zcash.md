@@ -1,4 +1,4 @@
-# إلى أي مدى تقدّمت Zcash في الإفصاح الانتقائي (selective disclosure)، وما الذي تبقّى
+# إلى أي مدى تقدّمت Zcash في الإفصاح الانتقائي، وما الذي تبقّى
 
 *هذه المقالة منسوخة من [Proof Street](https://www.proofstreet.xyz/)، وهي منشورة مستقلة تغطي الحوسبة الحافظة للخصوصية (privacy): ZK وـ FHE وـ MPC وـ TEEs والهوية اللامركزية (decentralized). نُشرت في الأصل بعنوان [«إلى أي مدى تقدّمت Zcash في الإفصاح الانتقائي، وما الذي تبقّى»](https://www.proofstreet.xyz/how-far-zcash-has-come-on-selective-disclosure-and-whats-left/) في 7 سبتمبر 2026. وأُعيد نشرها بإذن من المؤلف في إطار [منحة مجتمع Zcash رقم 339](https://forum.zcashcommunity.com/t/grant-application-zcash-in-the-privacy-stack-339/56456). بقلم Stephen Webber.*
 

@@ -1,4 +1,4 @@
-# التجزئة والالتزامات (Commitments): الظرف المختوم السحري
+# التجزئة والالتزامات: الظرف المختوم السحري
 ##### بحث أصلي من [Annkkitaaa](https://github.com/Annkkitaaa)
 
 ![نص بديل](/content-images/image-15-0c16784b27.webp)

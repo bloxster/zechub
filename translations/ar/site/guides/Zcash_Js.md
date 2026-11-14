@@ -1,4 +1,4 @@
-# دليل المطور (developer) لـ Zcash JS
+# دليل المطور لـ Zcash JS
 
 **zcash.js** (`@zcashlabs/zcash.js`) هي SDK تجريبية لـ TypeScript/JavaScript أصدرتها Zcash Labs في 26 أكتوبر 2026. تتيح للمطورين بناء المحافظ (wallets) والعملاء الخفيفين (light clients) ولوحات المعلومات (dashboards) والتطبيقات التي تتفاعل مع شبكة Zcash من Node.js ومن المتصفح.
 
@@ -23,7 +23,7 @@ npm install @zcashlabs/zcash.js@0.1.1
 - يُفضَّل استخدام TypeScript مع ESM (`"type": "module"` في `package.json`).
 - تعمل تطبيقات المتصفح عبر أداة تجميع ESM حديثة. ستُخرج أداة التجميع أصول WASM ذات التحميل الكسول والعمّال وأصول الإثبات — ويجب نشر هذه الأصول مع تطبيقك.
 
-## أول استعلام على السلسلة (chain) (بدون محفظة)
+## أول استعلام على السلسلة (بدون محفظة)
 
 ```ts
 import { createLightClient } from '@zcashlabs/zcash.js';

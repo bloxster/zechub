@@ -1,4 +1,4 @@
-# <img src="/content-images/people-community-add-svgrepo-com-3c6ac75333.svg" width="24" height="24" alt="Journalist icon"/>  إدارة خزينة (treasury) مجتمعية خاصة بـ Zcash
+# <img src="/content-images/people-community-add-svgrepo-com-3c6ac75333.svg" width="24" height="24" alt="Journalist icon"/>  إدارة خزينة مجتمعية خاصة بـ Zcash
 
 <span className="inline-flex items-center gap-[6px]">
   <span className="inline-block w-[12px] h-[12px] bg-green-500 rounded-full"></span>

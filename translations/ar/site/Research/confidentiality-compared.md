@@ -1,4 +1,4 @@
-# مقارنة السرية: ما الذي تعد به أربع بنى للخصوصية (privacy)
+# مقارنة السرية: ما الذي تعد به أربع بنى للخصوصية
 
 *هذه المقالة منسوخة من [Proof Street](https://www.proofstreet.xyz/)، وهي منشورة مستقلة تغطي الحوسبة الحافظة للخصوصية: ZK وFHE وMPC وTEEs والهوية اللامركزية (decentralized). نُشرت في الأصل بعنوان [«مقارنة السرية: ما الذي تعد به أربع بنى للخصوصية»](https://www.proofstreet.xyz/confidentiality-compared-what-four-privacy-architectures-promise/) في 12 أغسطس 2026. نُسخت بإذن من المؤلف ضمن [منحة مجتمع Zcash رقم #339](https://forum.zcashcommunity.com/t/grant-application-zcash-in-the-privacy-stack-339/56456). بقلم Stephen Webber.*
 

@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# معالجات الدفع (Payment Processors) لـ Zcash
+# معالجات الدفع لـ Zcash
 
 طرق قبول ZEC بصفتك تاجرًا، مع مقارنتها جنبًا إلى جنب. جرى التحقق من كل إدخال مقابل الموقع الرسمي للمزوّد وواجهة API الخاصة به في **29 يوليو 2026**، باستثناء Zcash Payment Service الذي أُضيف في **1 نوفمبر 2026**.
 

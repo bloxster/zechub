@@ -1,4 +1,4 @@
-# <img src="/content-images/journalist-host-profession-interview-svg-2eb63ae5c9.svg" width="24" height="24" alt="Journalist icon"/> إعداد الخصوصية (privacy) للصحفيين بـ Zcash
+# <img src="/content-images/journalist-host-profession-interview-svg-2eb63ae5c9.svg" width="24" height="24" alt="Journalist icon"/> إعداد الخصوصية للصحفيين بـ Zcash
 
 <span className="inline-flex items-center gap-[6px]">
   <span className="inline-block w-[12px] h-[12px] bg-green-500 rounded-full"></span>

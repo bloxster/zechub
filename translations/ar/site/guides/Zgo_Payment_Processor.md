@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# معالج الدفع (payment) ZGo: قبول Zcash دون وصاية
+# معالج الدفع ZGo: قبول Zcash دون وصاية
 
 ZGo هو معالج دفع غير وصائي (non-custodial) لـ Zcash. يدفع العميل بـ ZEC من محفظته (wallet) الخاصة، ويراقب ZGo سلسلة الكتل (blockchain) الخاصة بـ Zcash بحثًا عن المعاملة (transaction)، ثم تصل الأموال مباشرةً إلى محفظة التاجر عبر تحويل محمي (shielded). ولا يحتفظ ZGo بالأموال أبدًا في أي مرحلة بينهما.
 

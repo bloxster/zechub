@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# <img src="/content-images/image-2024-02-03-173258092-a5440e5ee2.webp" alt="Alt Text" width="50"/>   منصات التداول الوصائية (Custodial Exchanges)
+# <img src="/content-images/image-2024-02-03-173258092-a5440e5ee2.webp" alt="Alt Text" width="50"/>   منصات التداول الوصائية
 
 Ironwood هو المجمّع المحمي (shielded pool) الذي وصل مع ترقية الشبكة (network upgrade) في يوليو 2026. أما منصات التداول التي لا تتعامل إلا مع عناوين (addresses) t-address الشفافة (transparent) فلا تلمسه أبدًا، لذا وُصفت بأنها «غير منطبق». وحيث تتعامل منصة التداول مع العناوين المحمية دون أن تذكر المجمّع الذي تستخدمه، يشير السطر إلى ذلك بدلًا من التخمين.
 

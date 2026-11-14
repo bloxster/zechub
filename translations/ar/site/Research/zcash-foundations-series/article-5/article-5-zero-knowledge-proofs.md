@@ -1,4 +1,4 @@
-# إثباتات المعرفة الصفرية (Zero-Knowledge Proofs): أن تثبت أنك على حق دون أن تقول السبب
+# إثباتات المعرفة الصفرية: أن تثبت أنك على حق دون أن تقول السبب
 ##### بحث أصلي من [Annkkitaaa](https://github.com/Annkkitaaa)
 
 ![نص بديل](/content-images/image-23-71534bece9.webp)

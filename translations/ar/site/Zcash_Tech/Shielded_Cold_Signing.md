@@ -1,4 +1,4 @@
-# التوقيع البارد المحمي (Shielded Cold Signing)
+# التوقيع البارد المحمي
 
 > **الفكرة الأساسية:** ترى المحفظة (wallet) المرافقة كل ما يلزم لبناء معاملة (transaction) محمية ومراقبتها. أما المحفظة المادية (hardware wallet) فهي وحدها التي تملك صلاحية الإذن بالإنفاق. وهذا الفصل هو جوهر التوقيع البارد المحمي.
 
@@ -485,7 +485,7 @@ https://forum.zcashcommunity.com/t/a-path-forward-for-ledger-and-zcash/50951/177
 
 https://www.youtube.com/watch?v=VhkhfG0LCFs
 
-### التوقيع البارد (cold signing) في YWallet؛ نهج سابق
+### التوقيع البارد في YWallet؛ نهج سابق
 
 Ywallet محفظة مرافقة، منفصلة عن كل من Ledger و Zondax، سلكت مسارها الخاص نحو التوقيع البارد المحمي.
 

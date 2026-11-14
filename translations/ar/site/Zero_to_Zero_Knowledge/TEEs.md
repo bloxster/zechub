@@ -1,4 +1,4 @@
-# Zero to Zero Knowledge: بيئات التنفيذ الموثوقة (Trusted Execution Environments - TEEs)
+# Zero to Zero Knowledge: بيئات التنفيذ الموثوقة
 
 **السلسلة:** Zero to Zero Knowledge
 
@@ -46,7 +46,7 @@ https://carter-woetzel.medium.com/secret-network-tees-lets-talk-fud-vulnerabilit
 
 ---
 
-## الإثبات عن بُعد (Remote Attestation)
+## الإثبات عن بُعد
 
 **الإثبات عن بُعد** هو عملية إثبات أن الجيب الآمن يعمل في بيئة أجهزة آمنة حقيقية.
 
@@ -63,7 +63,7 @@ https://carter-woetzel.medium.com/secret-network-tees-lets-talk-fud-vulnerabilit
 
 ---
 
-## ختم البيانات (Data Sealing)
+## ختم البيانات
 
 نظرًا لأن الجيوب الآمنة عديمة الحالة، يجب أحيانًا تخزين البيانات خارجها في ذاكرة غير موثوقة.  
 
@@ -83,7 +83,7 @@ https://carter-woetzel.medium.com/secret-network-tees-lets-talk-fud-vulnerabilit
 
 ---
 
-## بيئات التنفيذ الموثوقة في شبكات إثبات الحصة (Proof-of-Stake)
+## بيئات التنفيذ الموثوقة في شبكات إثبات الحصة
 
 تستخدم كثير من سلاسل الكتل القائمة على إثبات الحصة (ومنها Secret وOasis) **Tendermint** إطارًا للإجماع.
 

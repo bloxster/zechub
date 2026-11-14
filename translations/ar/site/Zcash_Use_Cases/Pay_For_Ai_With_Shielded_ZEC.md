@@ -1,4 +1,4 @@
-# <img src="/content-images/programmer-software-engineer-coder-softw-bce5a0cb5b.svg" width="24" height="24" alt="developer icon"/> ادفع مقابل خدمات الذكاء الاصطناعي بخصوصية باستخدام ZEC المحمي (shielded)
+# <img src="/content-images/programmer-software-engineer-coder-softw-bce5a0cb5b.svg" width="24" height="24" alt="developer icon"/> ادفع مقابل خدمات الذكاء الاصطناعي بخصوصية باستخدام ZEC المحمي
 
 <span className="inline-flex items-center gap-[6px]">
   <span className="inline-block w-[12px] h-[12px] bg-green-500 rounded-full"></span>
@@ -59,7 +59,7 @@
 
 انتقل إلى nano-gpt.com وابدأ استخدامه. كل جلسة مجهولة الهوية افتراضيًا، والتطبيق نفسه يقول ذلك: *«أنت تستخدم NanoGPT بخصوصية بالفعل.»* لا يوجد حساب لإنشائه ولا بريد إلكتروني لتقديمه.
 
-### الخطوة 2: احفظ رمز تسجيل دخول (token) أولًا
+### الخطوة 2: احفظ رمز تسجيل دخول أولًا
 
 قبل أن تودع أي أموال، افتح **الإعدادات (Settings)** وأنشئ رمز تسجيل دخول، ثم احفظه في مكان آمن.
 

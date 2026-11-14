@@ -1,4 +1,4 @@
-# <img src="/content-images/programmer-software-engineer-coder-softw-bce5a0cb5b.svg" width="24" height="24" alt="Freelancer icon"/> إعداد الخصوصية (privacy) للعاملين المستقلين باستخدام Zcash
+# <img src="/content-images/programmer-software-engineer-coder-softw-bce5a0cb5b.svg" width="24" height="24" alt="Freelancer icon"/> إعداد الخصوصية للعاملين المستقلين باستخدام Zcash
 
 <span className="inline-flex items-center gap-[6px]">
   <span className="inline-block w-[12px] h-[12px] bg-green-500 rounded-full"></span>

@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# منصات التداول اللامركزية (Decentralised Exchanges)
+# منصات التداول اللامركزية
 
 لا يؤيد ZecHub أي خدمة معينة من خدمات منصات التداول اللامركزية، لذا يُرجى أن تجري بحثك الخاص.
 

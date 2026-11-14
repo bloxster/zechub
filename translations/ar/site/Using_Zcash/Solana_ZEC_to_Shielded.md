@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# هل لديك ZEC على Solana؟ انقله إلى Zcash المحمي (shielded)
+# هل لديك ZEC على Solana؟ انقله إلى Zcash المحمي
 
 هذه الصفحة لك إذا ظهر ZEC في محفظتك (wallet) على Solana لأنك تحمل ZCAT، أو رمزًا (token) آخر على Solana يدفع لحامليه بـ ZEC. لست بحاجة إلى بيع أي شيء لاتباع هذه الصفحة. ستنقل ZEC الذي تملكه بالفعل من Solana إلى محفظة Zcash، وفي النهاية يصبح لديك محميًا.
 

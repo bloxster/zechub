@@ -72,12 +72,12 @@
 #### 3. شجرة التزامات note في Zcash
 في المجمّعات المحمية (shielded pools) **Sapling** و **Orchard** في Zcash، تُستخدم **شجرة التزامات note (Note Commitment Tree)** للتحقق من صحة المعاملات (transactions) وفقًا لقواعد الإجماع (consensus)، مع إخفاء المُرسِل والمستلم والمبالغ المستهلكة إخفاءً تامًا.
 
-#### 4. تجزئة التوقيع (Signature Hash) (كتل على نمط Bitcoin)
+#### 4. تجزئة التوقيع (كتل على نمط Bitcoin)
 تُعد **SHA256** مثالًا على «تجزئة التوقيع» المستخدمة لفرض عدم قابلية كل كتلة في سلسلة Bitcoin للتغيير. ويستخدم كل مُعدّن (miner) لإنشاء الكتل الجديدة قيمة تجزئة الكتلة السابقة + قيمة تجزئة جميع المعاملات في الكتلة الحالية (hashMerkleRoot) + الطابع الزمني + قيمة عشوائية / صعوبة الشبكة.
 
 ![مخطط كتلي لـ SHA256](/content-images/Fn_PaVZXoAApHPf-936e479067.webp)
 
-#### 5. Equihash (تعدين (mining) Zcash)
+#### 5. Equihash (تعدين Zcash)
 **Equihash** هي خوارزمية التجزئة المستخدمة في تعدين Zcash. كما تستخدمها شبكات مثل Komodo و Horizen.
 
 **Equihash: إثبات العمل (Proof-of-Work) غير المتماثل القائم على مسألة عيد الميلاد المعمّمة** (Biryukov و Khovratovich): https://eprint.iacr.org/2015/946

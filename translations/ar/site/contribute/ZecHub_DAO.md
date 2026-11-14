@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# المنظمة المستقلة اللامركزية (DAO) لـ ZecHub
+# المنظمة المستقلة اللامركزية لـ ZecHub
 
 ![Governance](/content-images/https-3A-2F-2Fsubstack-post-media.s3.ama-710a149234.webp)
 

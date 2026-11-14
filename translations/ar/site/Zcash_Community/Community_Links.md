@@ -21,7 +21,7 @@
 - [Zcash Foundation](https://discord.gg/na6QZNd) - تحديثات المؤسسة والحوكمة (governance)
 - [المنظمة المستقلة اللامركزية لـ ZecHub](https://discord.gg/zcash) - المساهمون في المنظمة المستقلة اللامركزية (DAO) المجتمعية
 
-### <span translate="no" class="notranslate">Mastodon / التواصل الاجتماعي اللامركزي (decentralized)</span>
+### <span translate="no" class="notranslate">Mastodon / التواصل الاجتماعي اللامركزي</span>
 
 - [ZecHub.Social](https://zechub.social/public/local) - خادم Mastodon لمجتمع Zcash
 - [Bluesky @zcashesp.bsky.social](https://bsky.app/profile/zcashesp.bsky.social) - Zcash بالإسبانية على Bluesky (انتقل من X بعد تعليق الحساب)

@@ -29,7 +29,7 @@ cargo build --bin participant
 
 ستكون الملفات التنفيذية في المجلد target.
 
-## إنشاء عنوان موحد (UA) لـ FROST
+## إنشاء عنوان موحد لـ FROST
 
 `./generateFROST_UA.sh`
 
@@ -39,7 +39,7 @@ cargo build --bin participant
 
 Accounts -> انقر على + والصق ufvk من الخطوة السابقة
 
-## إنشاء معاملة (transaction) بـ Ywallet
+## إنشاء معاملة بـ Ywallet
 
 الصق أي UA وأرسل معاملة. احفظ الملف.
 

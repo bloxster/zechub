@@ -1,4 +1,4 @@
-# المنحنيات الإهليلجية: حيث تولد مفاتيح Zcash والتزاماتها (commitment)
+# المنحنيات الإهليلجية: حيث تولد مفاتيح Zcash والتزاماتها
 ##### بحث أصلي من [Annkkitaaa](https://github.com/Annkkitaaa)
 
 ![نص بديل](/content-images/image-10-c1097b22d7.webp)

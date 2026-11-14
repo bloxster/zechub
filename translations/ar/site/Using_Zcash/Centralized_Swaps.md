@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# منصات المبادلة (swap) المركزية
+# منصات المبادلة المركزية
 
 لا يؤيد ZecHub أي خدمة منصة تداول (exchange) بعينها، لذا يُرجى أن تجري بحثك الخاص.
 

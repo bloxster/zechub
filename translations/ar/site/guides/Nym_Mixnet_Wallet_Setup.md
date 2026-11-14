@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# توجيه حركة مرور محافظ (wallets) Zcash عبر شبكة المزج (Mixnet) الخاصة بـ Nym
+# توجيه حركة مرور محافظ Zcash عبر شبكة المزج الخاصة بـ Nym
 
 > آخر تحقق: 29 سبتمبر 2026
 

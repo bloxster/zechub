@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# العقدة الكاملة (full node) Zebra
+# العقدة الكاملة Zebra
 
 ## الخلاصة
 
@@ -91,7 +91,7 @@ target/release/zebrad start
 
   - اضبط *tracing.progress_bar* في ملف *zebrad.toml* لعرض المقاييس الرئيسية في الطرفية باستخدام أشرطة التقدم. تنبيه: توجد مشكلة معروفة قد تصبح فيها تقديرات أشرطة التقدم كبيرة جدًا.
 
-### إعداد التعدين (mining)
+### إعداد التعدين
 
   - يمكن إعداد Zebra للتعدين بتحديد *MINER_ADDRESS* وتعيين المنافذ في Docker. تجد مزيدًا من التفاصيل في [وثائق دعم التعدين](https://zebra.zfnd.org/user/mining-docker.html).
 

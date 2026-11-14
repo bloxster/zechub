@@ -1,4 +1,4 @@
-# نظرة عامة على تمويل Zcash والحوكمة (governance)
+# نظرة عامة على تمويل Zcash والحوكمة
 
 نموذج التمويل على السلسلة (on-chain) لـ Zcash، وآليات مكافآت الكتل (block)، وأدوار المنظمات الرئيسية
 
@@ -131,6 +131,6 @@ ZIP 1016 (أُنشئ في فبراير 2025) جرى تفعيله على الشب
 - مقترحات تحسين Zcash -> [zips.z.cash](https://zips.z.cash)  
 - بوابة Zcash Community Grants -> [zcashcommunitygrants.org](https://zcashcommunitygrants.org)
 
-## 6. لوحة معلومات (dashboard) الصندوق المقفل
+## 6. لوحة معلومات الصندوق المقفل
 
 تعرض لوحة معلومات ZecHub المبلغ الحالي من ZEC في الصندوق المقفل وصندوق حاملي العملات [هنا](https://zechub.wiki/dashboard?tab=lockbox).

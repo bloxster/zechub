@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# دليل استخدام ZEC المحمي (shielded) على Ledger
+# دليل استخدام ZEC المحمي على Ledger
 
 > احتفظ بـ ZEC الخاصة (المحمية) واستلمها وأرسلها باستخدام محفظتك المادية (hardware wallet) من Ledger في Ledger Wallet Desktop.
 

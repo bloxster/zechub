@@ -1,4 +1,4 @@
-# Zero to Zero Knowledge: المعاملات (Transactions) الشفافة (Transparent) مقابل المحمية (Shielded) والعناوين (Addresses) الموحدة
+# Zero to Zero Knowledge: المعاملات الشفافة مقابل المحمية والعناوين الموحدة
 
 **سلسلة المقالات:** Zero to Zero Knowledge
 

@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# مبادلة (Swap) SOL/USDC إلى ZEC باستخدام encrypt.trade
+# مبادلة SOL/USDC إلى ZEC باستخدام encrypt.trade
 
 > بادِل SOL أو USDC على Solana إلى ZEC، مع توجيه الخطوة عبر السلاسل (cross-chain) من خلال NEAR Intents.
 

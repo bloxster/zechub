@@ -42,7 +42,7 @@
   - Anna ([AnnaRRose](https://x.com/AnnaRRose))
   - Tarun ([tarunchitra](https://x.com/tarunchitra))
 
-### الحلقة 330 – أطر الخصوصية (privacy) القابلة للبرمجة مع Ying Tong و Bryan Gillespie
+### الحلقة 330 – أطر الخصوصية القابلة للبرمجة مع Ying Tong و Bryan Gillespie
 - **التاريخ:** 3 يوليو 2024
 - **الرابط:** [https://zeroknowledge.fm/330-2](https://zeroknowledge.fm/330-2)
 - **الملخص:** تتحدث Anna و Guille مع Ying Tong Lai من Geometry Research و Bryan Gillespie من Inversed Tech حول عملهما على «SoK: Programmable Privacy in Distributed Systems»، ويستكشفون تصنيفات وأطرًا جديدة.
@@ -71,7 +71,7 @@ ZL;DR برنامج يسلط الضوء على كل ما يتعلق بـ Zcash ب
 
 ## قائمة تشغيل بودكاست ZecHub
 
-### أهمية الخصوصية، والعملات الرقمية للبنوك المركزية (CBDCs) وعملية Chokepoint 2.0 | Kurt Opsahl – 11
+### أهمية الخصوصية، والعملات الرقمية للبنوك المركزية وعملية Chokepoint 2.0 | Kurt Opsahl – 11
 - **التاريخ:** 29 مارس 2024
 - **الرابط:** [https://youtu.be/n0IxTUKLgd4?si=V3FCTYDcTYnzmnGN](https://youtu.be/n0IxTUKLgd4?si=V3FCTYDcTYnzmnGN)
 - **الملخص:**

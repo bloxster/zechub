@@ -1,4 +1,4 @@
-# أشجار Merkle: كيف تتذكر سلسلة الكتل (blockchain) كل note
+# أشجار Merkle: كيف تتذكر سلسلة الكتل كل note
 ##### بحث أصلي من [Annkkitaaa](https://github.com/Annkkitaaa)
 
 ![نص بديل](/content-images/image-19-cfbdcf8f78.webp)

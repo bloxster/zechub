@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# إثبات الدفع المحمي (shielded proof of payment) وإفصاحات الدفع (payment disclosures)
+# إثبات الدفع المحمي وإفصاحات الدفع
 
 ## باختصار
 

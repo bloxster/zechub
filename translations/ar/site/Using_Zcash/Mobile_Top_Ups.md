@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# شحن (top up) رصيد الهاتف المحمول بـ Zcash
+# شحن رصيد الهاتف المحمول بـ Zcash
 
 > اشحن رصيد هاتف مسبق الدفع بـ ZEC، مع إنشاء حساب أو بدونه.
 

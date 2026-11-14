@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Edit-blue" alt="Edit Page"/>
 </a>
 
-# المعرفة الصفرية (Zero Knowledge) مقابل الأنظمة القائمة على التمويه (Decoy)
+# المعرفة الصفرية مقابل الأنظمة القائمة على التمويه
 
 «تكشف العملات المشفرة جميع أنشطة إنفاقك للعامة، لأنها تشبه تمامًا Twitter لحسابك المصرفي، وهذه مشكلة كبيرة يجب حلّها من خلال اعتماد الخصوصية (privacy) على السلسلة (on-chain).» - Ian Miers في [Devcon4](https://youtube.com/watch?v=9s3EbSKDA3o&feature=share9).
 
